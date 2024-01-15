@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/abpower.svg)](https://badge.fury.io/py/abpower)
+
 # abpower
 
 `abpower` is a parser for the publicly-available data provided by [AESO](https://aeso.ca/) related to the power grid in Alberta. It consists of a package and a command-line utility.
