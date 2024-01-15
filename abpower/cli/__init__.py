@@ -4,16 +4,7 @@ import click
 from pathlib import Path
 from rich.logging import RichHandler
 from rich.console import Console
-from abpower.parser import (
-    CurrentSupplyDemandParser,
-    SystemMarginalPriceParser,
-    PoolPriceParser,
-    ActualForecastParser,
-    DailyAveragePoolPriceParser,
-    SupplySurplusParser,
-    HourlyAvailableCapabilityParser,
-    ETSParser,
-)
+from abpower.parser import ETSParser
 
 
 FORMAT = "%(message)s"
@@ -56,6 +47,7 @@ def main(debug: bool):
             "pool-price",
             "supply-surplus",
             "system-marginal-price",
+            "peak-load-forecast",
             "all",
         ]
     ),

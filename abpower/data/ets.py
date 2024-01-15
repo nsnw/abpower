@@ -9,6 +9,7 @@ from .hourly_available_capability import HourlyAvailableCapability
 from .pool_price import PoolPrice
 from .supply_surplus import SupplySurplus
 from .system_marginal_price import SystemMarginalPrice
+from .peak_load_forecast import PeakLoadForecast
 
 
 logger = logging.getLogger(__name__)
@@ -29,3 +30,4 @@ class ETS(OutputMixin):
     pool_price: PoolPrice | None = field(repr=False)
     supply_surplus: SupplySurplus | None = field(repr=False)
     system_marginal_price: SystemMarginalPrice | None = field(repr=False)
+    peak_load_forecast: PeakLoadForecast | None = field(repr=False)

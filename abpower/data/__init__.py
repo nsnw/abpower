@@ -6,4 +6,5 @@ from .actual_forecast import ActualForecast
 from .daily_average_pool_price import DailyAveragePoolPrice
 from .hourly_available_capability import HourlyAvailableCapability
 from .supply_surplus import SupplySurplus
+from .peak_load_forecast import PeakLoadForecast
 from .ets import ETS
