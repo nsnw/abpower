@@ -4,7 +4,7 @@
 
 ## Background
 
-During the summer of 2020 (yes, _that_ summer) I built a website named **ABPower** that gathered and displayed data from AESO. It was fairly buggy and eventually I stopped maintaining it.
+During the summer of 2020 (yes, _that_ summer) I built a website named the **Alberta Power Dashboard** that gathered and displayed data from AESO. It was fairly buggy and eventually I stopped maintaining it.
 
 This is an attempt to write a more robust parser than the original, with the possibility of bringing the website back at some point in the future - or at least providing a parser someone else can use.
 
@@ -92,6 +92,7 @@ Not all the data provided on the AESO website is queried or parsed by `abpower`.
 * `pool-price` - the [Pool Price](http://ets.aeso.ca/ets_web/ip/Market/Reports/SMPriceReportServlet) report, which gives the historical pool prices over the last 24 hours
 * `supply-surplus` - the [Supply Surplus](http://ets.aeso.ca/ets_web/ip/Market/Reports/SupplySurplusReportServlet) report, which gives the forecasted surplus status for the next 6 hours
 * `system-marginal-price` - the [System Marginal Price](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSMPriceReportServlet) report, which gives the historical price over the last few hours
+* `peak-load-forecast` the [Peak Load Forecast](http://ets.aeso.ca/ets_web/ip/Market/Reports/MonthlyPeakLoadForecastReportServlet) report, which gives the forecasted peak load for the next 7 days
 
 ## Known issues and future plans
 
