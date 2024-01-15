@@ -5,4 +5,5 @@ from .actual_forecast import ActualForecastParser
 from .daily_average_pool_price import DailyAveragePoolPriceParser
 from .supply_surplus import SupplySurplusParser
 from .hourly_available_capability import HourlyAvailableCapabilityParser
+from .peak_load_forecast import PeakLoadForecastParser
 from .ets import ETSParser

@@ -7,6 +7,7 @@ from abpower.data import (
     PoolPrice,
     SupplySurplus,
     SystemMarginalPrice,
+    PeakLoadForecast,
     ETS,
 )
 from . import (
@@ -17,6 +18,7 @@ from . import (
     PoolPriceParser,
     SupplySurplusParser,
     SystemMarginalPriceParser,
+    PeakLoadForecastParser
 )
 from datetime import datetime, timezone
 
@@ -74,6 +76,14 @@ class ETSParser:
 
         return parser.get()
 
+    def get_peak_load_forecast(self) -> PeakLoadForecast:
+        """
+        Get the Peak Load Forecast.
+        """
+        parser = PeakLoadForecastParser()
+
+        return parser.get()
+
     def get(self, query: tuple | list = None) -> ETS:
         """Return all available parts of the ETS site."""
         logger.debug(f"Parsing ETS...")
@@ -87,7 +97,8 @@ class ETSParser:
             "hourly-available-capability": self.get_hourly_available_capability,
             "pool-price": self.get_pool_price,
             "supply-surplus": self.get_supply_surplus,
-            "system-marginal-price": self.get_system_marginal_price
+            "system-marginal-price": self.get_system_marginal_price,
+            "peak-load-forecast": self.get_peak_load_forecast
         }
 
         values = {}

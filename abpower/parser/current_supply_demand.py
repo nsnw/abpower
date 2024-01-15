@@ -184,7 +184,12 @@ class CurrentSupplyDemandParser(BaseParser):
         return timestamp
 
     def parse(self, b: BeautifulSoup) -> CurrentSupplyDemand:
-        """Parse the Current Supply Demand page."""
+        """
+        Parse the Current Supply Demand page, and return the data.
+
+        :param b:
+        :return:
+        """
         logger.debug(f"Parsing current supply demand...")
 
         now = datetime.now(tz=timezone.utc)

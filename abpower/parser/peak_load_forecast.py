@@ -1,5 +1,4 @@
 import logging
-import bpython
 import pytz
 import re
 from .base import BaseParser

@@ -86,7 +86,7 @@ class PoolPriceParser(BaseParser):
 
             hour_end_prices.append(
                 HourEndPoolPrice(
-                    b=b,
+                    b=tr,
                     hour_end=hour_end,
                     price=price,
                     rolling_average=rolling_average,

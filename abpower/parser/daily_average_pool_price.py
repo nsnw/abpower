@@ -1,5 +1,4 @@
 import logging
-import bpython
 import pytz
 from .base import BaseParser
 from bs4 import BeautifulSoup
@@ -76,7 +75,7 @@ class DailyAveragePoolPriceParser(BaseParser):
 
             days.append(
                 DayAveragePoolPrice(
-                    b=b,
+                    b=tr,
                     date=date,
                     daily_average=daily_average,
                     daily_on_peak_average=daily_on_peak_average,

@@ -1,5 +1,4 @@
 import logging
-import bpython
 import pytz
 import re
 from .base import BaseParser
@@ -22,7 +21,7 @@ class HourlyAvailableCapabilityParser(BaseParser):
 
     path = "Market/Reports/SevenDaysHourlyAvailableCapabilityReportServlet"
 
-    def create_hour_end_timestamp(self, date: str, hour: str) -> datetime:
+    def create_hour_end_timestamp(self, date: str, hour: int) -> datetime:
         """Create a datetime object for the 'hour end' value."""
 
         # Get the actual current time.
@@ -48,8 +47,8 @@ class HourlyAvailableCapabilityParser(BaseParser):
         }.get(month)
 
         # Do the whole "hour 24 is hour 0 thing".
-        if hour == "24":
-            hour = "23"
+        if hour == 24:
+            hour = 23
             advance_hour = True
         else:
             advance_hour = False
@@ -58,7 +57,7 @@ class HourlyAvailableCapabilityParser(BaseParser):
             year=int(year),
             month=int(month),
             day=int(day),
-            hour=int(hour),
+            hour=hour,
             minute=0,
             tzinfo=now.tzinfo,
         )
@@ -100,7 +99,7 @@ class HourlyAvailableCapabilityParser(BaseParser):
                     logger.debug(f"Finished parsing '{current_type}'.")
                     generation_types.append(
                         GenerationHourlyAvailableCapability(
-                            b=b,
+                            b=tr,
                             generation_type=current_type,
                             hour_ends=hour_ends,
                             mc=current_mc,
@@ -128,11 +127,11 @@ class HourlyAvailableCapabilityParser(BaseParser):
             # Strip the % sign off the values and convert them to floats.
             values = [float(value.removesuffix("%")) for value in values]
 
-            percentages = list(zip(range(1, 24), values))
+            percentages = list(zip(range(1, 25), values))
 
             hour_ends += [
                 HourEndHourlyAvailableCapability(
-                    b=b,
+                    b=tr,
                     hour_end=self.create_hour_end_timestamp(date=date, hour=hour),
                     percentage=percentage,
                 )

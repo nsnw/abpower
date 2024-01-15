@@ -102,7 +102,7 @@ class SystemMarginalPriceParser(BaseParser):
         hour_end = self.create_hour_end_timestamp(as_of, hour_end)
 
         return CurrentProjectedPrice(
-            b=b, hour_end=hour_end, as_of=as_of, price=float(price)
+            b=string, hour_end=hour_end, as_of=as_of, price=float(price)
         )
 
     def parse_historical_projected_prices(
@@ -147,7 +147,7 @@ class SystemMarginalPriceParser(BaseParser):
 
             historical_prices.append(
                 HistoricalProjectedPrice(
-                    b=b,
+                    b=tr,
                     hour_end=hour_end,
                     as_of=as_of,
                     price=float(price),

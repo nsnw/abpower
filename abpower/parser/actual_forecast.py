@@ -108,7 +108,7 @@ class ActualForecastParser(BaseParser):
 
             hour_end_actual_forecasts.append(
                 HourEndActualForecast(
-                    b=b,
+                    b=tr,
                     hour_end=hour_end,
                     forecast_pool_price=forecast_pool_price,
                     actual_posted_pool_price=actual_posted_pool_price,

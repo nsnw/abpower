@@ -1,5 +1,4 @@
 import logging
-import bpython
 import pytz
 from .base import BaseParser
 from bs4 import BeautifulSoup
@@ -77,7 +76,7 @@ class SupplySurplusParser(BaseParser):
             hour_end = self.create_hour_end_timestamp(hour_end)
 
             hour_end_supply_surpluses.append(
-                HourEndSupplySurplus(b=b, hour_end=hour_end, status=status)
+                HourEndSupplySurplus(b=tr, hour_end=hour_end, status=status)
             )
 
         return hour_end_supply_surpluses

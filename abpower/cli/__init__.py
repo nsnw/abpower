@@ -1,5 +1,4 @@
 import logging
-import bpython
 import click
 from pathlib import Path
 from rich.logging import RichHandler
