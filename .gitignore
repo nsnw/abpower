@@ -2,3 +2,5 @@
 .idea/
 *.pyc
 dist/
+*.json
+.coverage
